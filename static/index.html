@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agente de ventas</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">📊</span>
+      <div>
+        <h1>Agente de ventas</h1>
+        <p id="estado" class="estado">Comprobando…</p>
+      </div>
+    </div>
+    <button id="nueva" class="ghost" type="button">Nueva conversación</button>
+  </header>
+
+  <main id="chat" class="chat" aria-live="polite">
+    <section id="bienvenida" class="bienvenida">
+      <h2>Pregunta lo que quieras sobre las ventas</h2>
+      <p>El agente consulta la base SQLite <code>sales_data.db</code> y te responde en español.</p>
+      <div class="sugerencias">
+        <button type="button">¿Cuál es el top 5 de tiendas por ventas totales?</button>
+        <button type="button">¿Qué porcentaje de las ventas se hizo en promoción?</button>
+        <button type="button">Evolución mensual de unidades vendidas</button>
+        <button type="button">¿Qué clases de producto facturan más?</button>
+      </div>
+    </section>
+  </main>
+
+  <form id="formulario" class="composer">
+    <textarea id="mensaje" rows="1" placeholder="Escribe tu pregunta…" autocomplete="off" required></textarea>
+    <button id="enviar" type="submit">Enviar</button>
+  </form>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
